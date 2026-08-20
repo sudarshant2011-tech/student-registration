@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>P M SHRI Kendriya Vidyalaya Ballari</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e3f2fd, #fff8e1);
+            padding: 30px 15px;
+        }
+
+        /* Main card */
+        .container {
+            width: 100%;
+            max-width: 560px;
+            margin: auto;
+            background: white;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            padding: 25px 25px 28px 115px;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: white;
+            min-height: 130px;
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 75px;
+            height: 75px;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            object-fit: contain;
+            border: 3px solid white;
+        }
+
+        .school-name {
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .location {
+            margin-top: 7px;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .portal {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Form area */
+        .form-area {
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 17px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #bbb;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #1976d2;
+            box-shadow: 0 0 5px rgba(25,118,210,0.25);
+        }
+
+        /* Register button */
+        button {
+            width: 100%;
+            margin-top: 28px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Thank-you screen */
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 45px 30px;
+        }
+
+        .check {
+            font-size: 55px;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .thank-you h1 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .thank-you p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .school-highlight {
+            color: #d84315;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            padding: 0 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- School Header -->
+        <div class="header">
+
+            <!-- Put your school logo in the same folder and name it school-logo.png -->
+            <img src="school-logo.png" class="logo" alt="School Logo">
+
+            <div class="school-name">
+                P M SHRI Kendriya Vidyalaya Ballari
+            </div>
+
+            <div class="location">
+                Hale Bellary
+            </div>
+
+            <div class="portal">
+                Student Registration Portal
+            </div>
+
+        </div>
+
+
+        <!-- Registration Form -->
+        <div class="form-area" id="registrationForm">
+
+            <h2>Student Registration</h2>
+
+            <form onsubmit="submitForm(event)">
+
+                <!-- Student Name -->
+                <label for="studentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student's full name"
+                    required
+                >
+
+
+                <!-- Class -->
+                <label for="class">
+                    Class
+                </label>
+
+                <select id="class" required>
+                    <option value="">Select Class</option>
+                    <option>Class 1</option>
+                    <option>Class 2</option>
+                    <option>Class 3</option>
+                    <option>Class 4</option>
+                    <option>Class 5</option>
+                    <option>Class 6</option>
+                    <option>Class 7</option>
+                    <option>Class 8</option>
+                    <option>Class 9</option>
+                    <option>Class 10</option>
+                    <option>Class 11</option>
+                    <option>Class 12</option>
+                </select>
+
+
+                <!-- Section -->
+                <label for="section">
+                    Section
+                </label>
+
+                <select id="section" required>
+                    <option value="">Select Section</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                </select>
+
+
+                <!-- Parent Email -->
+                <label for="email">
+                    Parent's Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter parent's email"
+                    required
+                >
+
+
+                <!-- Parent Phone -->
+                <label for="phone">
+                    Parent's Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter 10-digit phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+
+                <button type="submit">
+                    Register Now
+                </button>
+
+            </form>
+        </div>
+
+
+        <!-- Thank You Message -->
+        <div class="thank-you" id="thankYou">
+
+            <div class="check">✓</div>
+
+            <h1>Thank You for Registration!</h1>
+
+            <p>
+                The student registration has been successfully submitted.
+            </p>
+
+            <p style="margin-top: 10px;">
+                Thank you for registering with
+                <span class="school-highlight">
+                    P M SHRI Kendriya Vidyalaya Ballari
+                </span>.
+            </p>
+
+        </div>
+
+
+        <div class="footer">
+            P M SHRI Kendriya Vidyalaya Ballari • Student Registration
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            document.getElementById("registrationForm").style.display = "none";
+
+            document.getElementById("thankYou").style.display = "block";
+        }
+
+    </script>
+
+</body>
+</html>

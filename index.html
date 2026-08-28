@@ -313,16 +313,35 @@
 
     <script>
 
-        function submitForm(event) {
+       function submitForm(event) {
 
-            event.preventDefault();
+    event.preventDefault();
 
-            document.getElementById("registrationForm").style.display = "none";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzlqDTtbZwtRsd9Xc-4Etu6uZomUesnifpYt_RUa4Cpx3qysPK_7Hp3cxDgg9_Dxp58/exec";
 
-            document.getElementById("thankYou").style.display = "block";
-        }
+    const studentName = document.getElementById("studentName").value;
+    const studentClass = document.getElementById("class").value;
+    const section = document.getElementById("section").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
 
-    </script>
+    const data = new URLSearchParams();
 
+    data.append("studentName", studentName);
+    data.append("studentClass", studentClass);
+    data.append("section", section);
+    data.append("email", email);
+    data.append("phone", phone);
+
+    fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    });
+
+    document.getElementById("registrationForm").style.display = "none";
+    document.getElementById("thankYou").style.display = "block";
+}
+ </script>
 </body>
 </html>
